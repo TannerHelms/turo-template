@@ -1,7 +1,7 @@
 {
   "name": "saint-seeing",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "app/index.ts",
   "scripts": {
     "dev": "expo start",
     "android": "expo start --android",
@@ -9,15 +9,19 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
+    "@expo/metro-runtime": "^4.0.1",
     "expo": "~52.0.36",
     "expo-status-bar": "~2.0.1",
     "kill-port": "^2.0.1",
+    "nativewind": "4.1.23",
     "react": "18.3.1",
     "react-native": "0.76.7"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@types/react": "~18.3.12",
+    "tailwindcss": "3.4.15",
     "typescript": "^5.3.3"
   },
   "private": true
