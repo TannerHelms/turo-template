@@ -10,7 +10,8 @@ export default function WelcomeHeader() {
             <Image
                 source={require('../../assets/hero.png')}
                 style={styles.image}
-                resizeMode="cover"
+                resizeMode="contain"
+                resizeMethod='resize'
             />
             <Text style={styles.heading}>{heading}</Text>
             <Text style={styles.subheading}>{subheading}</Text>
@@ -23,12 +24,13 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     image: {
-        width: 200,
-        height: 200,
+        width: 250,
+        height: 250,
     },
     heading: {
+        marginTop: 15,
         fontSize: 20,
-        fontWeight: '600',
+        fontWeight: 'bold',
         textAlign: 'center',
         letterSpacing: 1,
         marginBottom: 5,

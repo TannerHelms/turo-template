@@ -7,9 +7,6 @@ export default function App() {
   return (
     <SafeAreaView>
       <SignIn />
-      <Button>
-        <ButtonText>Sign In</ButtonText>
-      </Button>
     </SafeAreaView>
   );
 }
