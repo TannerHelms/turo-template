@@ -1,22 +1,26 @@
 {
-  "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@views/*": [
-        "app/views/*"
-      ],
-      "@components/*": [
-        "app/components/*"
-      ],
-      "@utils/*": [
-        "app/utils/*"
+      "tailwind.config": [
+        "./tailwind.config.js"
       ],
       "@ui/*": [
         "app/ui/*"
       ],
-    },
-  }
+      "@views/*": [
+        "app/views/*"
+      ],
+      "@utils/*": [
+        "app/utils/*"
+      ],
+      "@components/*": [
+        "app/components/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "extends": "expo/tsconfig.base"
 }
