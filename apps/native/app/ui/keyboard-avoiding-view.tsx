@@ -4,8 +4,9 @@ export default function KeyboardAvoidingView({ children }: { children: React.Rea
         <Keyboard
             behavior={Platform.OS === "ios" ? "padding" : "height"}
             style={styles.container}
+            keyboardVerticalOffset={0}
         >
-            <ScrollView>
+            <ScrollView contentContainerStyle={styles.innerContainer}>
                 {children}
             </ScrollView>
         </Keyboard>

@@ -1,3 +1,4 @@
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { Button, ButtonSpinner, ButtonText } from "@ui/button/index";
 import FormDivider from "@ui/form-divider";
 import FormInput from "@ui/form-input";
@@ -12,8 +13,11 @@ import {
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import colors from "tailwindcss/colors"
+import { AuthNavigatorProps } from "../navigator/auth-navigator";
 
 export default function SignIn() {
+    const navigation = useNavigation<NavigationProp<AuthNavigatorProps>>()
+    const navigate = navigation.navigate
     const [isLoading, setIsLoading] = useState(false)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -25,7 +29,6 @@ export default function SignIn() {
                 <View style={styles.formContainer}>
                     <FormInput value={email} setValue={setEmail} icon={Mail} keyboardType="email-address" placeholder="Email" />
                     <FormInput value={password} setValue={setPassword} icon={Lock} placeholder="Password" secureTextEntry />
-                    <FormInput value={password} setValue={setPassword} icon={Lock} placeholder="Password" secureTextEntry />
                     <Button className="bg-primary-default rounded-md h-16 my-4" disabled={isLoading} onPress={() => setIsLoading(true)}>
                         {isLoading && (
                             <ButtonSpinner color={colors.gray[400]} />
@@ -35,7 +38,7 @@ export default function SignIn() {
                         </ButtonText>
                     </Button>
                     <FormDivider />
-                    <FormNavigator leftText="Don't have an account?" rightText="Sign Up" onPressLeft={() => { }} onPressRight={() => { }} />
+                    <FormNavigator leftText="Don't have an account?" rightText="Sign Up" onPressLeft={() => navigation.navigate("SignUp")} onPressRight={() => navigation.navigate("ForgetPassword")} />
                 </View >
             </View >
         </KeyboardAvoidingView>
